@@ -1,6 +1,5 @@
 // js/admin.js
-
-const API = window.API;
+// API is declared globally in config.js — do not redeclare here
 
 const ADMIN_PASS = 'tecquest2026'; // Change this or use env-based check
 let allTeams = [];
