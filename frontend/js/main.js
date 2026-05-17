@@ -45,7 +45,7 @@ const API =
   window.location.hostname === 'localhost' ||
   window.location.hostname === '127.0.0.1'
     ? 'http://127.0.0.1:8000'
-    : 'https://tecquest-api.onrender.com';
+    : 'https://tequest-backend-jq8o.onrender.com';
 
 const COMP_DATA = [
   { id:1, name:'Think Fast to Win Challenge',desc:'Solve riddles, crack clues and prove your thinking. Logic meets lateral thinking under time pressure.', max_teams:20 },
