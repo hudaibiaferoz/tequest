@@ -1,0 +1,107 @@
+/* ── ADMIN PAGE ── */
+.admin-page { background: #0A0C18; min-height: 100vh; font-family: var(--font-body); }
+
+/* Login */
+.admin-login { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 1rem; }
+.login-card { background: #0F1225; border: 1px solid var(--dark-border); border-radius: 20px; padding: 2.5rem; width: 100%; max-width: 380px; text-align: center; }
+.login-logo { width: 64px; height: 64px; margin: 0 auto 1.5rem; }
+.login-logo svg { width: 100%; height: 100%; }
+.login-card h2 { font-family: var(--font-heading); font-weight: 700; font-size: 1.6rem; color: white; margin-bottom: .4rem; }
+.login-card p { font-size: .88rem; color: rgba(255,255,255,.45); margin-bottom: 2rem; }
+.login-card .field-group label { color: rgba(255,255,255,.6); }
+.login-card input { background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.1); color: white; }
+.login-card input:focus { border-color: var(--red); box-shadow: 0 0 0 3px var(--red-glow); }
+.login-card input::placeholder { color: rgba(255,255,255,.2); }
+.login-card .btn-primary { width: 100%; margin-top: 1rem; justify-content: center; }
+.login-card .field-error { text-align: left; margin-top: .3rem; }
+
+/* Dashboard Layout */
+.admin-dashboard { display: flex; height: 100vh; overflow: hidden; }
+.admin-sidebar {
+  width: 240px; flex-shrink: 0; background: #0D0F1F;
+  border-right: 1px solid rgba(255,255,255,.07);
+  display: flex; flex-direction: column; padding: 1.5rem 0;
+}
+.sidebar-brand { display: flex; align-items: center; gap: .8rem; padding: 0 1.5rem 1.5rem; border-bottom: 1px solid rgba(255,255,255,.07); margin-bottom: 1rem; color: white; }
+.sidebar-nav { flex: 1; display: flex; flex-direction: column; gap: .2rem; padding: 0 .8rem; }
+.sn-item {
+  display: flex; align-items: center; gap: .75rem;
+  padding: .75rem 1rem; border-radius: 10px;
+  font-family: var(--font-heading); font-weight: 600; font-size: .9rem; letter-spacing: .03em;
+  color: rgba(255,255,255,.5); transition: var(--transition); text-decoration: none;
+}
+.sn-item svg { width: 18px; height: 18px; stroke: currentColor; }
+.sn-item:hover { background: rgba(255,255,255,.06); color: rgba(255,255,255,.9); }
+.sn-item.active { background: rgba(217,43,43,.15); color: var(--red); }
+.sidebar-logout {
+  margin: 0 .8rem; padding: .75rem 1rem; background: none;
+  border: 1px solid rgba(255,255,255,.1); border-radius: 10px;
+  color: rgba(255,255,255,.4); font-family: var(--font-heading); font-weight: 600; font-size: .85rem;
+  cursor: pointer; transition: var(--transition);
+}
+.sidebar-logout:hover { border-color: var(--red); color: var(--red); }
+
+/* Main Area */
+.admin-main { flex: 1; overflow-y: auto; background: #0A0C18; }
+.admin-view { padding: 2rem; }
+.admin-topbar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem; }
+.admin-topbar h1 { font-family: var(--font-heading); font-weight: 700; font-size: 1.6rem; color: white; }
+.topbar-actions { display: flex; gap: .75rem; flex-wrap: wrap; }
+.btn-export { background: rgba(36,81,163,.2); color: #7EB3FF; border: 1px solid rgba(36,81,163,.4); border-radius: 8px; padding: .6rem 1.2rem; font-family: var(--font-heading); font-weight: 700; font-size: .85rem; cursor: pointer; transition: var(--transition); }
+.btn-export:hover { background: rgba(36,81,163,.4); }
+.btn-refresh { background: rgba(255,255,255,.07); color: rgba(255,255,255,.7); border: 1px solid rgba(255,255,255,.1); border-radius: 8px; padding: .6rem 1.2rem; font-family: var(--font-heading); font-weight: 700; font-size: .85rem; cursor: pointer; transition: var(--transition); }
+.btn-refresh:hover { background: rgba(255,255,255,.12); }
+.filter-select { background: rgba(255,255,255,.07); color: white; border: 1px solid rgba(255,255,255,.15); border-radius: 8px; padding: .6rem 1rem; font-family: var(--font-heading); font-size: .88rem; outline: none; cursor: pointer; }
+.filter-select option { background: #1a1d2e; }
+
+/* Overview Cards */
+.overview-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+.ov-card { background: #0D0F1F; border: 1px solid rgba(255,255,255,.07); border-radius: 14px; padding: 1.5rem; }
+.ov-card-label { font-family: var(--font-heading); font-size: .75rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.4); margin-bottom: .6rem; }
+.ov-card-num { font-family: var(--font-display); font-size: 2.8rem; color: white; line-height: 1; }
+.ov-card-num.red { color: var(--red); }
+.ov-card-num.blue { color: var(--blue-light); }
+
+/* Slot Bars */
+.overview-slots { background: #0D0F1F; border: 1px solid rgba(255,255,255,.07); border-radius: 14px; padding: 1.5rem; }
+.overview-slots h3 { font-family: var(--font-heading); font-weight: 700; font-size: 1rem; color: white; margin-bottom: 1.2rem; }
+.slot-bar-row { margin-bottom: 1.2rem; }
+.sbr-header { display: flex; justify-content: space-between; font-family: var(--font-heading); font-size: .85rem; color: rgba(255,255,255,.7); margin-bottom: .4rem; }
+.sbr-bar { height: 8px; background: rgba(255,255,255,.08); border-radius: 100px; overflow: hidden; }
+.sbr-fill { height: 100%; border-radius: 100px; transition: width .8s ease; }
+.sbr-fill.ok { background: var(--blue-light); }
+.sbr-fill.low { background: #F59E0B; }
+.sbr-fill.full { background: var(--red); }
+
+/* Teams Table */
+.teams-table-wrap { background: #0D0F1F; border: 1px solid rgba(255,255,255,.07); border-radius: 14px; overflow: hidden; overflow-x: auto; }
+.teams-table { width: 100%; border-collapse: collapse; }
+.teams-table th { background: rgba(255,255,255,.05); padding: .9rem 1rem; text-align: left; font-family: var(--font-heading); font-weight: 700; font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.5); border-bottom: 1px solid rgba(255,255,255,.07); }
+.teams-table td { padding: .9rem 1rem; font-size: .88rem; color: rgba(255,255,255,.8); border-bottom: 1px solid rgba(255,255,255,.05); vertical-align: top; }
+.teams-table tr:last-child td { border: none; }
+.teams-table tr:hover td { background: rgba(255,255,255,.03); }
+.loading-row { text-align: center; color: rgba(255,255,255,.3); font-style: italic; }
+.td-comp-badge { display: inline-block; font-family: var(--font-heading); font-size: .75rem; font-weight: 700; padding: .25rem .6rem; border-radius: 6px; background: rgba(36,81,163,.2); color: #7EB3FF; letter-spacing: .05em; }
+.btn-delete { background: rgba(217,43,43,.15); color: var(--red); border: 1px solid rgba(217,43,43,.3); border-radius: 6px; padding: .35rem .8rem; font-family: var(--font-heading); font-weight: 700; font-size: .8rem; cursor: pointer; transition: var(--transition); }
+.btn-delete:hover { background: rgba(217,43,43,.35); }
+
+/* Comp Manage Grid */
+.comp-manage-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.2rem; }
+.comp-manage-card { background: #0D0F1F; border: 1px solid rgba(255,255,255,.07); border-radius: 14px; padding: 1.5rem; }
+.cmc-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 1rem; }
+.cmc-name { font-family: var(--font-heading); font-weight: 700; font-size: 1rem; color: white; }
+.cmc-toggle { background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.15); border-radius: 6px; padding: .3rem .8rem; font-family: var(--font-heading); font-weight: 700; font-size: .78rem; cursor: pointer; transition: var(--transition); color: rgba(255,255,255,.6); }
+.cmc-toggle:hover { border-color: var(--red); color: var(--red); }
+.cmc-toggle.close-btn { color: #F59E0B; border-color: rgba(245,158,11,.3); }
+.cmc-bar { margin-top: .7rem; }
+.cmc-stats { font-family: var(--font-heading); font-size: .88rem; color: rgba(255,255,255,.5); margin-top: .5rem; }
+.cmc-stats strong { color: white; }
+
+/* Delete Modal */
+.btn-danger { background: var(--red); color: white; border: none; border-radius: 8px; padding: .7rem 1.5rem; font-family: var(--font-heading); font-weight: 700; font-size: .95rem; cursor: pointer; transition: var(--transition); }
+.btn-danger:hover { background: var(--red-dark); }
+
+@media (max-width: 768px) {
+  .admin-sidebar { display: none; }
+  .admin-main { width: 100%; }
+}
