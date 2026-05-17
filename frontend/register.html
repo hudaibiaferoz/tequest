@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Register — TeQuest 2026 | JUW</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="css/register.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+</head>
+<body class="register-page">
+
+<!-- NAVBAR — matches index.html exactly -->
+<header class="navbar" id="navbar">
+  <div class="nav-container">
+    <div class="nav-brand">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfbqlpH0wTvBWqE60Ef4bcT1iU5WUA8XciAw&s" alt="JUW Logo" class="nav-logo-img"/>
+      <div class="nav-text">
+        <span class="nav-uni">Jinnah University for Women</span>
+        <span class="nav-dept">Department of CS &amp; Software Engineering</span>
+      </div>
+    </div>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="index.html#competitions">Events</a>
+      <a href="index.html#rules">Rules</a>
+      <a href="index.html#contact">Contact</a>
+      <a href="register.html" class="btn-nav">Register Now</a>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="index.html#competitions">Events</a>
+    <a href="index.html#rules">Rules</a>
+    <a href="index.html#contact">Contact</a>
+    <a href="register.html" class="btn-nav">Register Now</a>
+  </div>
+</header>
+
+<main class="register-main">
+  <div class="register-header">
+    <div class="container">
+      <div class="rh-badge">Registration Open</div>
+      <h1 class="rh-title">Register Your <span class="accent-text">Team</span></h1>
+      <p class="rh-sub">Fill in the details for both team members. Each team must have exactly 2 members.</p>
+    </div>
+  </div>
+
+  <div class="container register-container">
+    <form class="reg-form" id="regForm" novalidate>
+
+      <!-- Competition Select -->
+      <div class="form-card">
+        <div class="form-card-header">
+          <div class="fch-num">01</div>
+          <div>
+            <h3>Select Competition</h3>
+            <p>Choose the event your team will compete in</p>
+          </div>
+        </div>
+        <div class="form-card-body">
+          <div class="comp-select-grid" id="compSelectGrid"></div>
+          <input type="hidden" id="selectedComp" name="competition_id" required/>
+          <div class="field-error" id="compError"></div>
+        </div>
+      </div>
+
+      <!-- Team Name -->
+      <div class="form-card">
+        <div class="form-card-header">
+          <div class="fch-num">02</div>
+          <div>
+            <h3>Team Details</h3>
+            <p>Give your team a name</p>
+          </div>
+        </div>
+        <div class="form-card-body">
+          <div class="field-group">
+            <label for="teamName">Team Name <span class="req">*</span></label>
+            <input type="text" id="teamName" name="team_name" placeholder="e.g. Code Vipers" maxlength="60" required/>
+            <div class="field-error" id="teamNameError"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Member 1 -->
+      <div class="form-card">
+        <div class="form-card-header">
+          <div class="fch-num red-num">M1</div>
+          <div>
+            <h3>Member 1 — Team Leader</h3>
+            <p>Primary contact for your team</p>
+          </div>
+        </div>
+        <div class="form-card-body">
+          <div class="members-grid">
+            <div class="field-group">
+              <label>Full Name <span class="req">*</span></label>
+              <input type="text" name="m1_name" placeholder="Full Name" required/>
+              <div class="field-error"></div>
+            </div>
+            <div class="field-group">
+              <label>Father's Name <span class="req">*</span></label>
+              <input type="text" name="m1_father" placeholder="Father's Name" required/>
+              <div class="field-error"></div>
+            </div>
+            <div class="field-group">
+              <label>JUW ID <span class="req">*</span></label>
+              <input type="text" name="m1_juw_id" placeholder="e.g. 2026-CS-001" required/>
+              <div class="field-error" id="m1IdError"></div>
+            </div>
+            <div class="field-group">
+              <label>Batch <span class="req">*</span></label>
+              <select name="m1_batch" required>
+                <option value="">Select Batch</option>
+                <option value="Batch 26">Batch 26</option>
+              </select>
+              <div class="field-error"></div>
+            </div>
+            <div class="field-group">
+              <label>Section <span class="req">*</span></label>
+              <select name="m1_section" required>
+                <option value="">Select Section</option>
+                <option value="SE-A">SE-A</option>
+                <option value="SE-B">SE-B</option>
+                <option value="DS">DS</option>
+                <option value="CS">CS</option>
+              </select>
+              <div class="field-error"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Member 2 -->
+      <div class="form-card">
+        <div class="form-card-header">
+          <div class="fch-num blue-num">M2</div>
+          <div>
+            <h3>Member 2</h3>
+            <p>Second team member details</p>
+          </div>
+        </div>
+        <div class="form-card-body">
+          <div class="members-grid">
+            <div class="field-group">
+              <label>Full Name <span class="req">*</span></label>
+              <input type="text" name="m2_name" placeholder="Full Name" required/>
+              <div class="field-error"></div>
+            </div>
+            <div class="field-group">
+              <label>Father's Name <span class="req">*</span></label>
+              <input type="text" name="m2_father" placeholder="Father's Name" required/>
+              <div class="field-error"></div>
+            </div>
+            <div class="field-group">
+              <label>JUW ID <span class="req">*</span></label>
+              <input type="text" name="m2_juw_id" placeholder="e.g. 2026-CS-002" required/>
+              <div class="field-error" id="m2IdError"></div>
+            </div>
+            <div class="field-group">
+              <label>Batch <span class="req">*</span></label>
+              <select name="m2_batch" required>
+                <option value="">Select Batch</option>
+                <option value="Batch 26">Batch 26</option>
+              </select>
+              <div class="field-error"></div>
+            </div>
+            <div class="field-group">
+              <label>Section <span class="req">*</span></label>
+              <select name="m2_section" required>
+                <option value="">Select Section</option>
+                <option value="SE-A">SE-A</option>
+                <option value="SE-B">SE-B</option>
+                <option value="DS">DS</option>
+                <option value="CS">CS</option>
+              </select>
+              <div class="field-error"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-submit-row">
+        <button type="submit" class="btn-submit" id="submitBtn">
+          <span id="submitText">Submit Registration</span>
+          <div class="btn-spinner" id="submitSpinner"></div>
+        </button>
+        <div class="form-status" id="formStatus"></div>
+        <p class="form-note">By registering, you agree to abide by all TeQuest 2026 competition rules.</p>
+      </div>
+    </form>
+  </div>
+</main>
+
+<!-- Success Modal -->
+<div class="modal-overlay" id="successModal">
+  <div class="modal-box success-modal">
+    <div class="modal-icon success-icon">✓</div>
+    <h2>Registration Successful!</h2>
+    <p id="successMsg">Your team has been registered. See you on May 20!</p>
+    <div class="modal-details" id="successDetails"></div>
+    <button class="btn-primary" onclick="closeModal('successModal')">Done</button>
+  </div>
+</div>
+
+<!-- Error Modal -->
+<div class="modal-overlay" id="errorModal">
+  <div class="modal-box error-modal">
+    <div class="modal-icon error-icon">✕</div>
+    <h2>Registration Failed</h2>
+    <p id="errorMsg">Something went wrong. Please try again.</p>
+    <button class="btn-outline" onclick="closeModal('errorModal')">Try Again</button>
+  </div>
+</div>
+
+<script src="js/config.js"></script>
+<script src="js/register.js"></script>
+<script>
+  // Navbar scroll effect
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 50));
+
+  // Hamburger
+  document.getElementById('hamburger').addEventListener('click', () => {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  });
+  document.querySelectorAll('.mobile-menu a').forEach(a =>
+    a.addEventListener('click', () => document.getElementById('mobileMenu').classList.remove('open'))
+  );
+</script>
+</body>
+</html>
