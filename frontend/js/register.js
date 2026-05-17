@@ -144,6 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     form.querySelectorAll('input[required], select[required]').forEach(input => {
+      if (input.type === 'hidden') return; // skip hidden inputs, validated separately
       if (!validateField(input)) valid = false;
     });
 
@@ -157,7 +158,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!valid) return;
 
     const payload = {
-      competition_id: selectedCompId,
+      competition_id: parseInt(selectedCompId),
       team_name: form.team_name.value.trim(),
       member1: {
         full_name: form.m1_name.value.trim(),
