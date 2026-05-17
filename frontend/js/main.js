@@ -41,7 +41,7 @@ updateCountdown();
 setInterval(updateCountdown, 1000);
 
 // ── Competitions Grid ──
-const API = window.API;
+// API is declared globally in config.js — do not redeclare here
 
 const COMP_DATA = [
   { id:1, name:'Think Fast to Win Challenge',desc:'Solve riddles, crack clues and prove your thinking. Logic meets lateral thinking under time pressure.', max_teams:20 },
