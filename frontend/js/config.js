@@ -1,10 +1,10 @@
 // js/config.js — API base URL
 // Replace with your deployed Render backend URL
-const API_BASE =
+const API =
   window.location.hostname === 'localhost' ||
   window.location.hostname === '127.0.0.1'
     ? 'http://127.0.0.1:8000'
-    : 'https://tecquest-api.onrender.com';
+    : 'https://tequest-backend-jq8o.onrender.com';
 const COMPETITIONS = [
   {
     id: 1,
