@@ -1,7 +1,5 @@
 // js/register.js
-
-// ── SAFE GLOBAL API (prevents duplicate declaration error) ──
-const API = window.API;
+// API is declared globally in config.js — do not redeclare here
 
 // ── Fallback data ──
 const COMP_DATA = [
