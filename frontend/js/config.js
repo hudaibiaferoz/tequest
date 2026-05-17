@@ -1,10 +1,15 @@
-// js/config.js — API base URL
-// Replace with your deployed Render backend URL
+// js/config.js — Single source of truth for API URL
+// All other JS files use the global `API` set here — do NOT redeclare it.
+
 const API =
   window.location.hostname === 'localhost' ||
   window.location.hostname === '127.0.0.1'
     ? 'http://127.0.0.1:8000'
     : 'https://tequest-backend-jq8o.onrender.com';
+
+// Expose as window property so other scripts can reference it safely
+window.API = API;
+
 const COMPETITIONS = [
   {
     id: 1,
@@ -45,11 +50,10 @@ const COMPETITIONS = [
 
 async function fetchCompetitions() {
   try {
-    const res = await fetch(`${API_BASE}/api/competitions`);
+    const res = await fetch(`${API}/api/competitions`); // fixed: was API_BASE
     if (!res.ok) throw new Error('API unavailable');
     return await res.json();
   } catch {
-    // Fallback with mock data if backend not reachable
     return COMPETITIONS.map(c => ({ ...c, registered_teams: 0, is_open: true }));
   }
 }
@@ -62,7 +66,6 @@ function closeModal(id) {
   document.getElementById(id).classList.remove('open');
   document.body.style.overflow = '';
 }
-// Close modal on overlay click
 document.addEventListener('click', e => {
   if (e.target.classList.contains('modal-overlay')) {
     e.target.classList.remove('open');
