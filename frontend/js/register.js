@@ -1,12 +1,6 @@
 // js/register.js
 
 // ── SAFE GLOBAL API (prevents duplicate declaration error) ──
-window.API =
-  window.location.hostname === 'localhost' ||
-  window.location.hostname === '127.0.0.1'
-    ? 'http://127.0.0.1:8000'
-    : 'https://tequest-backend-jq8o.onrender.com';
-
 const API = window.API;
 
 // ── Fallback data ──
