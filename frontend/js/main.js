@@ -42,6 +42,7 @@ setInterval(updateCountdown, 1000);
 
 // ── Competitions Grid ──
 // API is declared globally in config.js — do not redeclare here
+// API is declared globally in config.js — do not redeclare here
 
 const COMP_DATA = [
   { id:1, name:'Think Fast to Win Challenge',desc:'Solve riddles, crack clues and prove your thinking. Logic meets lateral thinking under time pressure.', max_teams:20 },
@@ -66,16 +67,16 @@ async function loadCompetitions() {
 function renderCompGrid(comps) {
   const grid = document.getElementById('compGrid');
   if (!grid) return;
-  grid.innerHTML = comps.map(c => {
+  grid.innerHTML = comps.map((c, i) => {
     const left = c.max_teams - (c.registered_teams || 0);
     const isFull = left <= 0 || !c.is_open;
     const isLow = left <= 5 && !isFull;
     return `
     <div class="comp-card${isFull ? ' full' : ''}">
       ${isFull ? '<span class="comp-badge-full">Full</span>' : ''}
-      <div class="comp-icon">${c.icon || '🏆'}</div>
+      <div class="comp-num">0${i + 1}</div>
       <div class="comp-name">${c.name}</div>
-      <div class="comp-desc">${c.desc}</div>
+      <div class="comp-desc">${c.desc || c.description || ''}</div>
       <div class="comp-slots">
         <span>${isFull ? 'Registration Closed' : 'Slots Available'}</span>
         <span class="slots-count${isFull ? ' full' : isLow ? ' low' : ''}">
