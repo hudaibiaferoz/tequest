@@ -128,4 +128,6 @@ const styleSheet = document.createElement('style');
 styleSheet.textContent = '.in-view { opacity: 1 !important; transform: translateY(0) !important; }';
 document.head.appendChild(styleSheet);
 
-loadCompetitions();
+document.addEventListener("DOMContentLoaded", () => {
+  loadCompetitions();
+});
